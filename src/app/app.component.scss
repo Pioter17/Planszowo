@@ -8,3 +8,28 @@ header {
   width: 100%;
   line-height: 100px;
 }
+
+nav {
+  margin-bottom: 40px;
+  text-align: center;
+  border-bottom: 2px solid black;
+}
+
+nav a {
+  font-size: 30px;
+  padding: 35px;
+  border-left: 2px solid rgb(197, 197, 199);
+  border-radius: 0;
+}
+
+nav a.__right_edge {
+  border-right: 2px solid rgb(197, 197, 199);
+}
+
+nav a:hover {
+  text-decoration-line: none;
+}
+
+nav a.active {
+  background-color: rgb(253, 255, 219);
+}
