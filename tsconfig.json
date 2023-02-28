@@ -1,11 +1,69 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
+// {
+//   "compileOnSave": false,
+//   "compilerOptions": {
+//     "baseUrl": "./",
+//     "outDir": "./dist/out-tsc",
+//     "forceConsistentCasingInFileNames": true,
+//     "strict": true,
+//     "noImplicitOverride": true,
+//     "noPropertyAccessFromIndexSignature": true,
+//     "noImplicitReturns": true,
+//     "noFallthroughCasesInSwitch": true,
+//     "sourceMap": true,
+//     "declaration": false,
+//     "downlevelIteration": true,
+//     "experimentalDecorators": true,
+//     "moduleResolution": "node",
+//     "importHelpers": true,
+//     "target": "ES2022",
+//     "module": "ES2022",
+//     "useDefineForClassFields": false,
+//     "lib": [
+//       "ES2022",
+//       "dom"
+//     ]
+//   },
+//   "angularCompilerOptions": {
+//     "enableI18nLegacyMessageIdFormat": false,
+//     "strictInjectionParameters": true,
+//     "strictInputAccessModifiers": true,
+//     "strictTemplates": true
+//   }
+// }
+
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "strict": true,
+    "strictPropertyInitialization": false,
     "baseUrl": "./",
+    "paths": {
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@env/*": [
+        "./src/environments/*"
+      ],
+      "@core/*": [
+        "./src/app/core/*"
+      ],
+      "@modules/*": [
+        "./src/app/modules/*"
+      ],
+      "@pages/*": [
+        "./src/app/pages/*"
+      ],
+      "@shared/*": [
+        "./src/app/shared/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
+      ]
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -16,11 +74,10 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "ES2022",
-    "module": "ES2022",
-    "useDefineForClassFields": false,
+    "target": "es2017",
+    "module": "es2020",
     "lib": [
-      "ES2022",
+      "es2020",
       "dom"
     ]
   },
