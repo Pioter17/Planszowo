@@ -1,1 +1,14 @@
-<p>offer works!</p>
+<div class="contents">
+  <nav>
+    <button
+      class="filter"
+      *ngFor="let filter of filters"
+      routerLink="{{filter.id}}"
+      routerLinkActive="active"
+      mat-flat-button
+    >
+      {{ filter.name }}
+    </button>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

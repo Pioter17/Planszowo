@@ -3,13 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
-import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { AppRoutingModule, RoutingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ItemListComponent } from './item-list/item-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents
+    RoutingComponents,
+    ItemListComponent
   ],
   imports: [
     BrowserModule,

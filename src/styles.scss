@@ -35,14 +35,19 @@ $Planszowo-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: rgb(253, 255, 219);
+}
 
 .contents {
-  width: 50%;
+  width: 60%;
   margin: auto;
   text-align: justify;
-  padding: 0;
   font-size: 20px;
 }
 

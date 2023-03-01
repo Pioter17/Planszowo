@@ -1,0 +1,18 @@
+nav {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+button.filter {
+  font-size: 20px;
+  padding: 25px;
+  border: 2px solid rgb(197, 197, 199);
+  border-radius: 0;
+  margin-right: -2px;
+  background-color: rgb(253, 255, 219);
+}
+
+button.active {
+  background-color: white;
+}
