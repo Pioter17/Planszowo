@@ -1,3 +1,11 @@
-<div>
-  {{ selectedFilterId }}
+<div class="wrap__wrapper">
+  <div
+    class="wrapper"
+  >
+      <ds-item
+        *ngFor="let item of itemsDisplayed; let i = index"
+        [dsProduct]="item"
+      >
+      </ds-item>
+  </div>
 </div>

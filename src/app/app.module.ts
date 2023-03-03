@@ -7,13 +7,15 @@ import { AppRoutingModule, RoutingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { ItemComponent } from './item/item.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RoutingComponents,
     ItemListComponent,
-    ItemComponent
+    ItemComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
