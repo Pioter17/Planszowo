@@ -2,4 +2,24 @@
   [dsTitle]="dsProduct.name"
   class="item"
 >
+<button
+  class="details"
+  (click)="showDetails()"
+  mat-stroked-button
+>
+<mat-icon>
+  info
+</mat-icon>
+Szczegóły
+</button>
+<button
+  class="add"
+  (click)="addToBasket()"
+  mat-stroked-button
+>
+<mat-icon>
+  add_shopping_cart
+</mat-icon>
+Dodaj do koszyka
+</button>
 </app-card>

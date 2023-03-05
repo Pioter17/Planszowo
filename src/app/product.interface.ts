@@ -5,3 +5,5 @@ export interface Product{
   details: string;
   price: number;
 }
+
+export type productForm = Omit<Product, "number">

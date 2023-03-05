@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { ItemComponent } from './item/item.component';
 import { CardComponent } from './card/card.component';
+import { ItemDetailsComponent } from './item-details/item-details.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CardComponent } from './card/card.component';
     RoutingComponents,
     ItemListComponent,
     ItemComponent,
-    CardComponent
+    CardComponent,
+    ItemDetailsComponent
   ],
   imports: [
     BrowserModule,

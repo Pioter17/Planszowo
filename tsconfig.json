@@ -36,6 +36,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "strictNullChecks": false,
     "strict": true,
     "strictPropertyInitialization": false,
     "baseUrl": "./",

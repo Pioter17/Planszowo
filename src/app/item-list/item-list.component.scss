@@ -1,14 +1,18 @@
-// .wrap__wrapper {
-//   display: flex;
-//   justify-content: center;
-//   flex-wrap: wrap;
-//   width: 100%;
-//   background-color: green;
+.wrap__wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
 
-// }
+
 .wrapper {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
 }
+
+// .wrapper:last-child {
+//   margin-right: auto;
+// }
