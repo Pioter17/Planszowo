@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Product } from '../product.interface';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-item-list',
@@ -29,7 +28,6 @@ export class ItemListComponent implements OnInit{
   typeOfProduct : number;
 
   constructor(
-    //private dialog : MatDialog
     private route : ActivatedRoute,
     private router : Router
   ){};
@@ -52,5 +50,7 @@ export class ItemListComponent implements OnInit{
       ...this.items.filter((item, ind) => typeOfItem == item.type || typeOfItem == 1)
     ]
   }
+
+
 
 }

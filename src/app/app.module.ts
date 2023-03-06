@@ -9,6 +9,8 @@ import { ItemListComponent } from './item-list/item-list.component';
 import { ItemComponent } from './item/item.component';
 import { CardComponent } from './card/card.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
+import { ShowDetailsComponent } from './show-details/show-details.component';
+import { AddToBasketComponent } from './add-to-basket/add-to-basket.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
     ItemListComponent,
     ItemComponent,
     CardComponent,
-    ItemDetailsComponent
+    ItemDetailsComponent,
+    ShowDetailsComponent,
+    AddToBasketComponent
   ],
   imports: [
     BrowserModule,
