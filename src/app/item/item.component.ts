@@ -1,5 +1,5 @@
-import { Component, Input, Output, OnDestroy } from '@angular/core';
-import { Product } from '../product.interface';
+import { Component, Input, Output, OnDestroy, EventEmitter } from '@angular/core';
+import { Product, ProductForm } from '../product.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { ShowDetailsComponent } from '../show-details/show-details.component';
 import { AddToBasketComponent } from '../add-to-basket/add-to-basket.component';
@@ -10,14 +10,16 @@ import { filter, takeUntil, Subject } from 'rxjs';
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.scss']
 })
-export class ItemComponent implements OnDestroy{
+export class ItemComponent {
   @Input() pwProduct : Product;
-  @Output() pwShowDetails : ShowDetailsComponent;
-  @Output() pwAddToBasket : AddToBasketComponent;
+  @Output() pwShowDetails = new EventEmitter<ProductForm>();
+  @Output() pwAddToBasket = new EventEmitter<ProductForm>();
 
   OnDestroy$ = new Subject<void>();
 
-  constructor(private dialog : MatDialog){ }
+  constructor(
+    public dialog : MatDialog
+  ){ }
 
   ngOnDestroy(): void {
     this.OnDestroy$.next();

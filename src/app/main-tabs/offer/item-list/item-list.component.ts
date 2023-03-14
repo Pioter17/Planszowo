@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { Product } from '../product.interface';
+import { Product } from '../../../product.interface';
 
 @Component({
   selector: 'app-item-list',

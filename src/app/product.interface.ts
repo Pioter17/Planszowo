@@ -6,4 +6,4 @@ export interface Product{
   price: number;
 }
 
-export type productForm = Omit<Product, "number">
+export type ProductForm = Omit<Product, "number">

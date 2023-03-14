@@ -41,27 +41,27 @@
     "strictPropertyInitialization": false,
     "baseUrl": "./",
     "paths": {
-      "@assets/*": [
-        "./src/assets/*"
-      ],
-      "@env/*": [
-        "./src/environments/*"
-      ],
-      "@core/*": [
-        "./src/app/core/*"
-      ],
-      "@modules/*": [
-        "./src/app/modules/*"
-      ],
+      // "@assets/*": [
+      //   "./src/assets/*"
+      // ],
+      // "@env/*": [
+      //   "./src/environments/*"
+      // ],
+      // "@core/*": [
+      //   "./src/app/core/*"
+      // ],
+      // "@modules/*": [
+      //   "./src/app/modules/*"
+      // ],
       "@pages/*": [
         "./src/app/pages/*"
       ],
-      "@shared/*": [
-        "./src/app/shared/*"
-      ],
-      "@styles/*": [
-        "./src/styles/*"
-      ]
+      // "@shared/*": [
+      //   "./src/app/shared/*"
+      // ],
+      // "@styles/*": [
+      //   "./src/styles/*"
+      // ]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
