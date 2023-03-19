@@ -1,7 +1,8 @@
 <div class="contents">
-  <nav>
+  <nav class="navigate">
     <button
       class="filter"
+      type="radio"
       *ngFor="let filter of filters"
       routerLink="{{filter.id}}"
       routerLinkActive="active"

@@ -1,19 +1,23 @@
-nav {
+.navigate {
   text-align: center;
   display: flex;
   justify-content: center;
   margin: 20px;
 }
 
-button.filter {
+.filter {
   font-size: 20px;
   padding: 25px;
   border: 2px solid rgb(197, 197, 199);
+  border-width: 2px 2px 2px 0;
   border-radius: 0;
-  margin-right: -2px;
   background-color: rgb(253, 255, 219);
+  &:first-child {
+
+    border-left-width: 2px ;
+  }
 }
 
-button.active {
+.active {
   background-color: white;
 }

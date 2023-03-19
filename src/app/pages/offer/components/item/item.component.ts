@@ -1,5 +1,5 @@
 import { Component, Input, Output, OnDestroy, EventEmitter } from '@angular/core';
-import { Product, ProductForm } from '../product.interface';
+import { Product, ProductForm } from '../../../../product.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { ShowDetailsComponent } from '../show-details/show-details.component';
 import { AddToBasketComponent } from '../add-to-basket/add-to-basket.component';

@@ -5,10 +5,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule, RoutingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { OfferComponent } from '@pages/offer/offer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RoutingComponents
   ],
   imports: [
     BrowserModule,
