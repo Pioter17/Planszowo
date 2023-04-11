@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    loadChildren: ()=> import('@pages/home/home.module').then(m => m.HomeModule),
   },
   {
     path: 'offer',
@@ -21,11 +21,11 @@ const routes: Routes = [
   },
   {
     path: 'basket',
-    component: BasketComponent
+    loadChildren: ()=> import('@pages/basket/basket.module').then(m => m.BasketModule),
   },
   {
     path: 'contact',
-    component: ContactComponent
+    loadChildren: ()=> import('@pages/contact/contact.module').then(m => m.ContactModule),
   },
   {
     path: "**",
@@ -38,8 +38,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-export const RoutingComponents = [HomeComponent,
-                                  BasketComponent,
-                                  ContactComponent,
-                                  PageNotFoundComponent];
