@@ -1,15 +1,48 @@
 <div class="contents">
   <nav class="navigate">
-    <button
-      class="filter"
-      type="radio"
-      *ngFor="let filter of filters"
-      routerLink="{{filter.id}}"
-      routerLinkActive="active"
-      mat-flat-button
+    <h3>Minimum players</h3>
+    <input
+      type="checkbox"
+
+      (click)="changeFilters('minPlayers',2)"
     >
-      {{ filter.name }}
-    </button>
+    <label
+
+    >
+      2
+    </label>
+    <input
+      type="checkbox"
+
+      (click)="changeFilters('minPlayers',4)"
+    >
+    <label
+
+    >
+      4
+    </label>
+    <h3>Maximum players</h3>
+    <input
+      type="checkbox"
+
+      (click)="changeFilters('maxPlayers',4)"
+    >
+    <label
+
+    >
+      4
+    </label>
+    <input
+      type="checkbox"
+
+      (click)="changeFilters('maxPlayers',6)"
+    >
+    <label
+
+    >
+      6
+    </label>
+
   </nav>
   <router-outlet></router-outlet>
 </div>

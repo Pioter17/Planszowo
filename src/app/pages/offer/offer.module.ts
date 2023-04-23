@@ -9,7 +9,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { OfferRoutingModule } from './offer-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { OfferComponent } from './offer.component';
+import { ApiManagerService } from './api-management.service';
 
 
 
@@ -25,7 +27,11 @@ import { OfferComponent } from './offer.component';
     CommonModule,
     MatIconModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
+  ],
+  providers: [
+    ApiManagerService
   ]
 })
 export class OfferModule { }

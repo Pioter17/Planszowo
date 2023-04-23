@@ -14,11 +14,7 @@ const routes: Routes = [
         component: ItemListComponent
       }
     ]
-  },
-  {
-    path: "**",
-    component: PageNotFoundComponent
-  },
+  }
 ];
 
 @NgModule({
