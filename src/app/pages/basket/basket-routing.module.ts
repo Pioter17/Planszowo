@@ -7,11 +7,7 @@ const routes: Routes = [
   {
     path: '',
     component: BasketComponent
-  },
-  {
-    path: "**",
-    component: PageNotFoundComponent
-  },
+  }
 ]
 
 @NgModule({

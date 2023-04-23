@@ -45,6 +45,6 @@ export class OfferComponent implements OnInit{
 
     this.apiManager.setGameFilters(filter, value);
 
-    console.log("sdklfghasdlf");
+    //console.log("sdklfghasdlf");
   }
 }

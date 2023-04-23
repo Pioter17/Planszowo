@@ -8,6 +8,13 @@ import { Filters } from './filters';
 })
 export class ApiManagerService {
 
+  private defaultFilters : Filters = {
+    isDefault : true,
+    minPlayers : 2,
+    maxPlayers : 4,
+    name : ""
+  }
+
   private gamesList$ = new BehaviorSubject<Filters>({
     isDefault : true,
     minPlayers : 2,
@@ -31,13 +38,27 @@ export class ApiManagerService {
       [filter] : value
     });
   }
+  defaultURL = '?minPlayers=2&maxPlayers=4&client_id=zE6Gyih2bj';
   rootURL = 'https://api.boardgameatlas.com/api/search';
 
   getGames(filters : Filters) : Observable<unknown> {
-    let queryParams = new HttpParams();
+    let filtersList = Object.entries(filters);
 
-    queryParams = queryParams.append("maxPlayers", filters.maxPlayers).append("client_id","zE6Gyih2bj");
-    return this.http.get(this.rootURL, {params: queryParams})
+    if(filtersList[0][1] == true){
+      return this.http.get(this.rootURL + this.defaultURL);
+    } else if(filtersList[3][1] != ""){
+      let nameURL = 'name='+ filtersList[3][1] +'&client_id=zE6Gyih2bj'
+      return this.http.get(this.rootURL + nameURL);
+    } else {
+      let queryParams = new HttpParams();
+      filtersList.slice(1).forEach(element => {
+        queryParams = queryParams.append(element[0], element[1])
+      });
+      queryParams = queryParams.append("client_id","zE6Gyih2bj");
+
+      return this.http.get(this.rootURL, {params: queryParams})
+    }
+
   }
 
 }

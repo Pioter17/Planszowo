@@ -7,11 +7,7 @@ const routes: Routes = [
   {
     path: '',
     component: ContactComponent
-  },
-  {
-    path: "**",
-    component: PageNotFoundComponent
-  },
+  }
 ]
 
 @NgModule({

@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Product } from 'src/app/product.interface';
 
 @Component({
-  selector: 'app-item-list',
+  selector: 'item-list',
   templateUrl: './item-list.component.html',
-  styleUrls: ['./item-list.component.css']
+  styleUrls: ['./item-list.component.scss']
 })
 export class ItemListComponent implements OnInit {
 
+  @Input() gamesList$ : Observable<unknown>;
+
+  private games : Product[];
   constructor() { }
 
   ngOnInit() {
+    console.log(this.gamesList$)
+    makeItems();
   }
 
+  private makeItems(){
+    this.gamesList$.subscribe(())
+  }
 }

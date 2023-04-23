@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ItemComponent } from '@pages/offer/components/item/item.component';
-import { ItemListComponent } from './item-list/item-list.component';
+import { ItemListComponent } from '@pages/offer/components/item-list/item-list.component';
 import { CardComponent } from '@pages/offer/components/card/card.component';
 
 
@@ -20,7 +20,8 @@ import { ApiManagerService } from './api-management.service';
     OfferComponent,
     ItemComponent,
     ItemListComponent,
-    CardComponent
+    CardComponent,
+
   ],
   imports: [
     OfferRoutingModule,
@@ -28,7 +29,8 @@ import { ApiManagerService } from './api-management.service';
     MatIconModule,
     MatDialogModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [
     ApiManagerService

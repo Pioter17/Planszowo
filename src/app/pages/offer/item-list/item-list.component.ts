@@ -7,7 +7,7 @@ import { Product } from '../../../product.interface';
   templateUrl: './item-list.component.html',
   styleUrls: ['./item-list.component.scss']
 })
-export class ItemListComponent implements OnInit{
+export class ItemLidddddstComponent implements OnInit{
 
   selectedFilterId : string ;
 
