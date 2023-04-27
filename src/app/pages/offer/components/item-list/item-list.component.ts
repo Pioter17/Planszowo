@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { GameList } from '@pages/offer/types/game-list.type';
 import { Product } from 'src/app/product.interface';
 
 @Component({
@@ -7,17 +7,31 @@ import { Product } from 'src/app/product.interface';
   templateUrl: './item-list.component.html',
   styleUrls: ['./item-list.component.scss']
 })
-export class ItemListComponent implements OnInit {
+export class ItemListComponent implements OnChanges {
 
-  @Input() gamesList: unknown;
+  @Input() gamesList: GameList;
 
-  private games : Product[];
+  displayedItems : Product[] = [];
+
   constructor() { }
 
-  ngOnInit() {
-    //console.log(this.gamesList$)
-    //makeItems();
+  ngOnChanges(changes: SimpleChanges): void {
+
+    this.createDisplayedArray();
   }
+
+  createDisplayedArray(){
+    if (this.gamesList?.games){
+      this.gamesList.games.forEach((res, counter)=>this.displayedItems.push({
+        name : res.handle,
+        id : counter,
+        image : res.images.medium,
+        details : ";dslfkhaslfjd;slj",
+        price : 15
+      }))
+    }
+  }
+
 
   private makeItems(){
   }

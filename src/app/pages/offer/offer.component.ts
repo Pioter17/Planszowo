@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiManagerService } from './api-management.service';
 import { Filters } from './filters';
-import { Observable, debounceTime, map, switchMap, tap } from 'rxjs';
-import { GameList } from './types/game-list.type';
+import { Observable, count, debounceTime, map, switchMap, tap } from 'rxjs';
+import { GameItem, GameList } from './types/game-list.type';
 
 @Component({
   selector: 'app-offer',
@@ -11,13 +11,6 @@ import { GameList } from './types/game-list.type';
   styleUrls: ['./offer.component.scss']
 })
 export class OfferComponent implements OnInit{
-
-  // filters = [
-  //   {"id" : "all", "name" : "Wszystko"},
-  //   {"id" : "board", "name" : "Gry planszowe"},
-  //   {"id" : "cards", "name" : "Gry karciane"},
-  //   {"id" : "others", "name" : "Inne"},
-  // ]
 
   constructor(
     private route: ActivatedRoute,
@@ -27,17 +20,23 @@ export class OfferComponent implements OnInit{
 
   gameFilters$ : Observable<Filters>
 
-  gameList$ : Observable<unknown>
+  gameList$ : Observable<GameList>
 
   ngOnInit(): void {
     this.gameFilters$ = this.apiManager.getGameFilters();
     this.gameList$ = this.gameFilters$.pipe(
       debounceTime(400),
       switchMap((res)=> this.apiManager.getGames(res)),
-      map((res)=> res.games.map((item)=>({
-        name:item.handle,
-        img: item.images.medium,
-      } ))  ),
+      map((res)=> {
+        const games = res.games.map((item)=>({
+        handle:item.handle,
+        images: {
+          large: "",
+          medium: item.images.medium,
+          small: ""
+        }}));
+      return {count : res.count, games};
+      }),
       tap((res) => console.log(res))
     )
   }
