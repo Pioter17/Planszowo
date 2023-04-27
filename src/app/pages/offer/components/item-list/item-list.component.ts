@@ -9,17 +9,16 @@ import { Product } from 'src/app/product.interface';
 })
 export class ItemListComponent implements OnInit {
 
-  @Input() gamesList$ : Observable<unknown>;
+  @Input() gamesList: unknown;
 
   private games : Product[];
   constructor() { }
 
   ngOnInit() {
-    console.log(this.gamesList$)
-    makeItems();
+    //console.log(this.gamesList$)
+    //makeItems();
   }
 
   private makeItems(){
-    this.gamesList$.subscribe(())
   }
 }

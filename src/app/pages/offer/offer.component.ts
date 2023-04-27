@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiManagerService } from './api-management.service';
 import { Filters } from './filters';
-import { Observable, debounceTime, switchMap, tap } from 'rxjs';
+import { Observable, debounceTime, map, switchMap, tap } from 'rxjs';
+import { GameList } from './types/game-list.type';
 
 @Component({
   selector: 'app-offer',
@@ -33,7 +34,11 @@ export class OfferComponent implements OnInit{
     this.gameList$ = this.gameFilters$.pipe(
       debounceTime(400),
       switchMap((res)=> this.apiManager.getGames(res)),
-      tap((res)=>console.log(res))
+      map((res)=> res.games.map((item)=>({
+        name:item.handle,
+        img: item.images.medium,
+      } ))  ),
+      tap((res) => console.log(res))
     )
   }
 

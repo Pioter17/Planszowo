@@ -45,6 +45,6 @@
 
   </nav>
   <item-list
-    [gamesList]="gameList$"
+    [gamesList]="gameList$ | async"
   ></item-list>
 </div>

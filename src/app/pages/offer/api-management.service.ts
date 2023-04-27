@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { BehaviorSubject, Observable, bufferTime, map, timeInterval } from 'rxjs';
 import { Filters } from './filters';
+import { GameList } from './types/game-list.type';
 
 @Injectable({
   providedIn: 'root'
@@ -41,14 +42,14 @@ export class ApiManagerService {
   defaultURL = '?minPlayers=2&maxPlayers=4&client_id=zE6Gyih2bj';
   rootURL = 'https://api.boardgameatlas.com/api/search';
 
-  getGames(filters : Filters) : Observable<unknown> {
+  getGames(filters : Filters) : Observable<GameList> {
     let filtersList = Object.entries(filters);
 
     if(filtersList[0][1] == true){
-      return this.http.get(this.rootURL + this.defaultURL);
+      return this.http.get<GameList>(this.rootURL + this.defaultURL);
     } else if(filtersList[3][1] != ""){
       let nameURL = 'name='+ filtersList[3][1] +'&client_id=zE6Gyih2bj'
-      return this.http.get(this.rootURL + nameURL);
+      return this.http.get<GameList>(this.rootURL + nameURL);
     } else {
       let queryParams = new HttpParams();
       filtersList.slice(1).forEach(element => {
@@ -56,7 +57,7 @@ export class ApiManagerService {
       });
       queryParams = queryParams.append("client_id","zE6Gyih2bj");
 
-      return this.http.get(this.rootURL, {params: queryParams})
+      return this.http.get<GameList>(this.rootURL, {params: queryParams})
     }
 
   }
