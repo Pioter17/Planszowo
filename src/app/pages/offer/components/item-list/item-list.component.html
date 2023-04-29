@@ -2,6 +2,16 @@
   <div
     class="wrapper"
   >
+    <h3
+      *ngIf="displayedItems.length == 0"
+    >
+    <br>
+    <br>
+    <mat-icon>
+      autorenew
+    </mat-icon>
+      Chwileczkę...
+    </h3>
     <pw-item
       *ngFor="let item of displayedItems; let i = index"
       [pwProduct]="item"

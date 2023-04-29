@@ -1,9 +1,9 @@
 import { Component, Input, Output, OnDestroy, EventEmitter } from '@angular/core';
 import { Product, ProductForm } from '../../../../product.interface';
 import { MatDialog } from '@angular/material/dialog';
-import { ShowDetailsComponent } from '../show-details/show-details.component';
 import { AddToBasketComponent } from '../add-to-basket/add-to-basket.component';
 import { filter, takeUntil, Subject } from 'rxjs';
+import { ItemDetailsComponent } from '../item-details/item-details.component';
 
 @Component({
   selector: 'pw-item',
@@ -27,8 +27,10 @@ export class ItemComponent {
   }
 
   showDetails(){
-   const dialogRef = this.dialog.open(ShowDetailsComponent, {
-    width: '400px'
+   const dialogRef = this.dialog.open(ItemDetailsComponent, {
+    width: '700px',
+    height: '450px',
+    data: this.pwProduct
    });
 
    dialogRef.afterClosed().pipe(

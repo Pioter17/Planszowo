@@ -11,7 +11,7 @@ export class ItemListComponent implements OnChanges {
 
   @Input() gamesList: GameList;
 
-  displayedItems : Product[] = [];
+  displayedItems : Product[] =  [];
 
   constructor() { }
 
@@ -22,6 +22,7 @@ export class ItemListComponent implements OnChanges {
 
   createDisplayedArray(){
     if (this.gamesList?.games){
+      this.displayedItems = [];
       this.gamesList.games.forEach((res, counter)=>this.displayedItems.push({
         name : res.handle,
         id : counter,
@@ -32,7 +33,4 @@ export class ItemListComponent implements OnChanges {
     }
   }
 
-
-  private makeItems(){
-  }
 }
