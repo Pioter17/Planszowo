@@ -2,6 +2,10 @@
   [dsTitle]="pwProduct.name"
   class="item"
 >
+<img [src]="pwProduct.images.small">
+<h4>
+  ${{ pwProduct.price }}
+</h4>
 <button
   class="details"
   (click)="showDetails()"

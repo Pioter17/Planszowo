@@ -1,8 +1,15 @@
 .item {
-  width: 300px;
-  height: 200px;
+  width: 400px;
+  height: 300px;
   position: relative;
 
+}
+
+img {
+  max-width: 80%;
+  max-height: 80%;
+  width: auto;
+  height: auto;
 }
 
 .details {

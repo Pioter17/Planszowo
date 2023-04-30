@@ -31,10 +31,13 @@ export class OfferComponent implements OnInit{
         const games = res.games.map((item)=>({
         handle:item.handle,
         images: {
-          large: "",
+          large: item.images.large,
           medium: item.images.medium,
-          small: ""
-        }}));
+          small: item.images.small
+        },
+        details: item.details,
+        price: item.price
+      }));
       return {count : res.count, games};
       }),
       tap((res) => console.log(res))
@@ -49,6 +52,5 @@ export class OfferComponent implements OnInit{
 
     this.apiManager.setGameFilters(filter, value);
 
-    //console.log("sdklfghasdlf");
   }
 }

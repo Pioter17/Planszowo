@@ -9,5 +9,7 @@ export type GameItem = {
     large:string,
     medium:string,
     small:string,
-  }
+  },
+  details: string,
+  price: number
 }

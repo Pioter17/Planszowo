@@ -26,9 +26,13 @@ export class ItemListComponent implements OnChanges {
       this.gamesList.games.forEach((res, counter)=>this.displayedItems.push({
         name : res.handle,
         id : counter,
-        image : res.images.medium,
-        details : ";dslfkhaslfjd;slj",
-        price : 15
+        images : {
+          large : res.images.large,
+          medium : res.images.medium,
+          small : res.images.small
+        },
+        details : res.details,
+        price : res.price
       }))
     }
   }

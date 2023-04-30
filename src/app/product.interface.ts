@@ -1,7 +1,11 @@
 export interface Product{
   id: number;
   name: string;
-  image: string;
+  images: {
+    large: string,
+    medium: string,
+    small: string
+  };
   details: string;
   price: number;
 }
