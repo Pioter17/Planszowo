@@ -18,6 +18,7 @@ export class OfferComponent implements OnInit{
     private apiManager: ApiManagerService
   ){ }
 
+
   gameFilters$ : Observable<Filters>
 
   gameList$ : Observable<GameList>

@@ -1,0 +1,61 @@
+<nav class="navigate">
+<form>
+  <!-- [formGroup]="form" -->
+  <h3>Minimum players</h3>
+  <input
+    matInput
+    type="radio"
+    formControlName="minPlayers"
+    name="min"
+  >
+  <label
+  >
+    2
+  </label>
+  <input
+    matInput
+    type="radio"
+    formControlName="minPlayers"
+    name="min"
+  >
+  <label
+  >
+    4
+  </label>
+  <h3>Maximum players</h3>
+  <input
+    matInput
+    type="radio"
+    formControlName="maxPlayers"
+    name="max"
+  >
+  <label
+  >
+    4
+  </label>
+  <input
+    matInput
+    type="radio"
+    formControlName="maxPlayers"
+    name="max"
+  >
+  <label
+  >
+    6
+  </label>
+  <input
+    matInput
+    type="text"
+    formControlName="gameName"
+  >
+  <button
+    mat-stroked-button
+    type="submit"
+    [disabled]="(isSame$ | async) || form.invalid"
+    (click)="sendActiveFilters()"
+  >
+  Search
+  </button>
+</form>
+
+</nav>

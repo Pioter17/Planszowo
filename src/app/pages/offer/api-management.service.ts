@@ -9,15 +9,8 @@ import { GameList } from './types/game-list.type';
 })
 export class ApiManagerService {
 
-  private defaultFilters : Filters = {
-    isDefault : true,
-    minPlayers : 2,
-    maxPlayers : 4,
-    name : ""
-  }
 
   private gamesList$ = new BehaviorSubject<Filters>({
-    isDefault : true,
     minPlayers : 2,
     maxPlayers : 4,
     name : ""
@@ -37,7 +30,6 @@ export class ApiManagerService {
     this.gamesList$.next({
       ...this.gamesList$.value,
       [filter] : value,
-      isDefault : false
     });
   }
   defaultURL = 'minPlayers=2&maxPlayers=4&client_id=zE6Gyih2bj';
@@ -46,10 +38,10 @@ export class ApiManagerService {
   getGames(filters : Filters) : Observable<GameList> {
     let filtersList = Object.entries(filters);
 
-    if(filtersList[0][1] == true){
+    /*if(filtersList[0][1] == true){
       console.log(this.rootURL + this.defaultURL);
       return this.http.get<GameList>(this.rootURL + this.defaultURL);
-    } else if(filtersList[3][1] != ""){
+    } else*/ if(filtersList[2][1] != ""){
       let nameURL = 'name='+ filtersList[3][1] +'&client_id=zE6Gyih2bj';
       console.log(this.rootURL + nameURL);
       return this.http.get<GameList>(this.rootURL + nameURL);
