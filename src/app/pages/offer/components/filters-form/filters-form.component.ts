@@ -1,7 +1,7 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Filters } from '@pages/offer/filters';
-import { Observable, filter } from 'rxjs';
+import { Observable, filter, firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'filters-form',
@@ -11,39 +11,40 @@ import { Observable, filter } from 'rxjs';
 export class FiltersFormComponent implements OnInit {
 
 
-  private defaultFilters : Filters = {
+  public defaultFilters : Filters = {
     minPlayers : 2,
     maxPlayers : 4,
-    name : ""
+    name : "Catan"
   }
 
-  @Output() activeFilters : Filters;
+  @Output() activeFilters = new EventEmitter<Filters>();
 
   form : FormGroup;
-  isSame$ : Observable<boolean>;
-  filters : Filters;
 
   constructor(
     private fb: FormBuilder
   ) {}
 
-
   ngOnInit(): void {
     this.form = this.fb.group({
-      minPlayers: [2],
-      maxPlayers: [4],
-      name: ['']
+      minPlayers: [this.defaultFilters.minPlayers],
+      maxPlayers: [this.defaultFilters.maxPlayers],
+      name: [this.defaultFilters.name]
     })
-
   }
 
   sendActiveFilters(){
     this.changeActiveFilters();
-
+    console.log(this.defaultFilters)
+    this.activeFilters.emit(this.defaultFilters);
+    return false;
   }
 
-  changeActiveFilters(){
-    console.log(this.form.get('minPlayers'))
+  changeActiveFilters() : void {
+    let formValues = this.form.value;
+      this.defaultFilters.minPlayers = formValues.minPlayers,
+      this.defaultFilters.maxPlayers = formValues.maxPlayers,
+      this.defaultFilters.name = formValues.name
   }
 
 }

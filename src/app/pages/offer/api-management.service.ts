@@ -26,12 +26,17 @@ export class ApiManagerService {
     return this.gamesList$.asObservable();
   }
 
-  setGameFilters(filter : keyof Filters, value : boolean | number | string) : void {
-    this.gamesList$.next({
-      ...this.gamesList$.value,
-      [filter] : value,
-    });
+  // setGameFilters(filter : keyof Filters, value : boolean | number | string) : void {
+  //   this.gamesList$.next({
+  //     ...this.gamesList$.value,
+  //     [filter] : value,
+  //   });
+  // }
+
+  setGameFilters(filters : Filters) : void{
+    this.gamesList$.next(filters);
   }
+
   defaultURL = 'minPlayers=2&maxPlayers=4&client_id=zE6Gyih2bj';
   rootURL = 'https://api.boardgameatlas.com/api/search?';
 
@@ -41,23 +46,23 @@ export class ApiManagerService {
     /*if(filtersList[0][1] == true){
       console.log(this.rootURL + this.defaultURL);
       return this.http.get<GameList>(this.rootURL + this.defaultURL);
-    } else*/ if(filtersList[2][1] != ""){
-      let nameURL = 'name='+ filtersList[3][1] +'&client_id=zE6Gyih2bj';
+    } else if(filtersList[2][1] != ""){
+      let nameURL = 'name='+ filtersList[2][1] +'&client_id=zE6Gyih2bj';
       console.log(this.rootURL + nameURL);
       return this.http.get<GameList>(this.rootURL + nameURL);
-    } else {
+    } else {*/
       //let queryParams = new HttpParams();
       let filtersURL : string = "";
-      filtersList.slice(1).forEach(element => {
-        filtersURL = filtersURL + "&" + element[0] + "=" + element[1];
+      filtersList.forEach(element => {
+        filtersURL = filtersURL + element[0] + "=" + element[1] + "&";
         //queryParams = queryParams.append(element[0], element[1])
       });
       //queryParams = queryParams.append("client_id","zE6Gyih2bj");
 
-      console.log(this.rootURL + filtersURL + '&client_id=zE6Gyih2bj');
-      return this.http.get<GameList>(this.rootURL + filtersURL + '&client_id=zE6Gyih2bj');
+      console.log(this.rootURL + filtersURL + 'client_id=zE6Gyih2bj');
+      return this.http.get<GameList>(this.rootURL + filtersURL + 'client_id=zE6Gyih2bj');
     }
 
   }
 
-}
+//}

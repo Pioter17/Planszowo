@@ -1,12 +1,11 @@
 <nav class="navigate">
-<form>
-  <!-- [formGroup]="form" -->
+  <form [formGroup]="form" (ngSubmit)="sendActiveFilters()" >
   <h3>Minimum players</h3>
   <input
     matInput
     type="radio"
     formControlName="minPlayers"
-    name="min"
+    value=2
   >
   <label
   >
@@ -16,7 +15,7 @@
     matInput
     type="radio"
     formControlName="minPlayers"
-    name="min"
+    value=4
   >
   <label
   >
@@ -27,7 +26,7 @@
     matInput
     type="radio"
     formControlName="maxPlayers"
-    name="max"
+    value=4
   >
   <label
   >
@@ -37,7 +36,7 @@
     matInput
     type="radio"
     formControlName="maxPlayers"
-    name="max"
+    value=6
   >
   <label
   >
@@ -46,16 +45,14 @@
   <input
     matInput
     type="text"
-    formControlName="gameName"
+    formControlName="name"
+    value=""
   >
   <button
-    mat-stroked-button
+    mat-raised-button
     type="submit"
-    [disabled]="(isSame$ | async) || form.invalid"
-    (click)="sendActiveFilters()"
   >
   Search
   </button>
 </form>
-
 </nav>

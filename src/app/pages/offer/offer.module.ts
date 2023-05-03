@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { OfferComponent } from '@pages/offer/offer.component';
 import { ApiManagerService } from '@pages/offer/api-management.service';
 import { MatSliderModule } from '@angular/material/slider';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,6 +27,8 @@ import { MatSliderModule } from '@angular/material/slider';
   imports: [
     OfferRoutingModule,
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatIconModule,
     MatDialogModule,
     MatButtonModule,

@@ -49,9 +49,11 @@ export class OfferComponent implements OnInit{
     this.router.navigate([filter.id], {relativeTo: this.route});
   }
 
-  changeFilters(filter : keyof Filters, value : boolean | number | string) : void{
+  // changeFilters(filter : keyof Filters, value : boolean | number | string) : void{
+  //   this.apiManager.setGameFilters(filter, value);
+  // }
 
-    this.apiManager.setGameFilters(filter, value);
-
+  changeFilters(filters : Filters){
+    this.apiManager.setGameFilters(filters);
   }
 }
