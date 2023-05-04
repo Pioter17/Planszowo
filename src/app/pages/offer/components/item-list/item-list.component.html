@@ -3,14 +3,23 @@
     class="wrapper"
   >
     <h3
-      *ngIf="displayedItems.length == 0"
+      *ngIf="gamesList == null || (displayedItems.length == 0 && gamesList != null)"
     >
-    <br>
-    <br>
-    <mat-icon>
-      autorenew
-    </mat-icon>
-      Chwileczkę...
+      <ng-container
+        *ngIf="gamesList == null"
+      >
+        <br>
+        <br>
+        <mat-icon>
+          autorenew
+        </mat-icon>
+        Chwileczkę...
+      </ng-container>
+      <ng-container
+        *ngIf="displayedItems.length == 0 && gamesList != null"
+      >
+        Nie odnaleziono elementów dla zadanych filtrów wyszukiwania
+      </ng-container>
     </h3>
     <pw-item
       *ngFor="let item of displayedItems; let i = index"

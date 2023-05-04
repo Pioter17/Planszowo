@@ -1,5 +1,5 @@
 <nav class="navigate">
-  <form [formGroup]="form" (ngSubmit)="sendActiveFilters()" >
+  <form [formGroup]="form" (ngSubmit)="changeActiveFilters()" >
   <h3>Minimum players</h3>
   <input
     matInput
@@ -53,6 +53,13 @@
     type="submit"
   >
   Search
+  </button>
+  <button
+    mat-flat-button
+    (click)="setFiltersToDefault()"
+    *ngIf="isDefault == false"
+  >
+    Usuń filtry
   </button>
 </form>
 </nav>

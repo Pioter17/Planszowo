@@ -1,7 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Filters } from '@pages/offer/filters';
-import { Observable, filter, firstValueFrom } from 'rxjs';
+import { Observable, filter, firstValueFrom, map, merge, of } from 'rxjs';
+import { isEqual } from 'lodash';
 
 @Component({
   selector: 'filters-form',
@@ -11,15 +12,23 @@ import { Observable, filter, firstValueFrom } from 'rxjs';
 export class FiltersFormComponent implements OnInit {
 
 
-  public defaultFilters : Filters = {
+  private defaultFilters : Filters = {
     minPlayers : 2,
     maxPlayers : 4,
-    name : "Catan"
+    name : ""
   }
 
-  @Output() activeFilters = new EventEmitter<Filters>();
+  public activeFilters : Filters = {
+    minPlayers : 2,
+    maxPlayers : 4,
+    name : ""
+  }
+
+  @Output() activeFiltersEmitter = new EventEmitter<Filters>();
 
   form : FormGroup;
+  public isDefault : boolean = true;
+  public isEdit$ : Observable<boolean>;
 
   constructor(
     private fb: FormBuilder
@@ -31,20 +40,51 @@ export class FiltersFormComponent implements OnInit {
       maxPlayers: [this.defaultFilters.maxPlayers],
       name: [this.defaultFilters.name]
     })
+
+    // this.isEdit$ = this.form.valueChanges.pipe(
+    //   map(value => {
+    //     return value.minPlayers !== this.defaultFilters.minPlayers ||
+    //            value.maxPlayers !== this.defaultFilters.maxPlayers ||
+    //            value.name !== this.defaultFilters.name;
+    //   })
+    // )
   }
 
-  sendActiveFilters(){
-    this.changeActiveFilters();
-    console.log(this.defaultFilters)
-    this.activeFilters.emit(this.defaultFilters);
+  private sendActiveFilters() : void{
+    console.log(this.activeFilters);
+    this.activeFiltersEmitter.emit(this.activeFilters);
+  }
+
+  changeActiveFilters() : boolean {
+    let formValues = this.form.value;
+    this.activeFilters.minPlayers = formValues.minPlayers,
+    this.activeFilters.maxPlayers = formValues.maxPlayers,
+    this.activeFilters.name = formValues.name;
+
+    if (formValues.minPlayers != this.defaultFilters.minPlayers ||
+        formValues.maxPlayers != this.defaultFilters.maxPlayers ||
+        formValues.name != this.defaultFilters.name){
+      this.isDefault = false;
+    }
+
+    this.sendActiveFilters();
     return false;
   }
 
-  changeActiveFilters() : void {
-    let formValues = this.form.value;
-      this.defaultFilters.minPlayers = formValues.minPlayers,
-      this.defaultFilters.maxPlayers = formValues.maxPlayers,
-      this.defaultFilters.name = formValues.name
+  setFiltersToDefault() : boolean{
+    this.activeFilters.minPlayers = this.defaultFilters.minPlayers;
+    this.activeFilters.maxPlayers = this.defaultFilters.maxPlayers;
+    this.activeFilters.name = this.defaultFilters.name;
+
+    this.isDefault = true;
+
+    this.form.reset({
+      minPlayers: 2,
+      maxPlayers: 4,
+      name: ""
+    });
+    this.sendActiveFilters();
+    return false;
   }
 
 }
