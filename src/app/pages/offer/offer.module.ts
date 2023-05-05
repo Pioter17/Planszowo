@@ -14,6 +14,8 @@ import { OfferComponent } from '@pages/offer/offer.component';
 import { ApiManagerService } from '@pages/offer/api-management.service';
 import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatRadioModule } from '@angular/material/radio'
+
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatDialogModule,
     MatButtonModule,
     HttpClientModule,
-    MatSliderModule
+    MatSliderModule,
+    MatRadioModule
   ],
   providers: [
     ApiManagerService

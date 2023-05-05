@@ -2,26 +2,39 @@
   width: 400px;
   height: 300px;
   position: relative;
+  background-color: azure;
+  color: navy;
+}
 
+.price {
+  position: absolute;
+  right: 20px;
+  bottom: 60px;
+  color: navy;
+  font-size: 25px;
 }
 
 img {
-  max-width: 80%;
-  max-height: 80%;
+  margin-top: 10px;
+  max-width: 70%;
+  max-height: 70%;
   width: auto;
   height: auto;
 }
 
 .details {
-  background-color: lightgray;
+  background-color: lightcyan;
   position: absolute;
   left: 10px;
   bottom: 10px;
+  font-size: 15px;
+  border-color: navy;
 }
 
 .add {
-  background-color: orange;
+  background-color: royalblue;
   position: absolute;
   right: 10px;
   bottom: 10px;
+  font-size: 15px;
 }

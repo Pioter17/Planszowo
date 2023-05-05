@@ -1,65 +1,72 @@
-<nav class="navigate">
-  <form [formGroup]="form" (ngSubmit)="changeActiveFilters()" >
-  <h3>Minimum players</h3>
-  <input
-    matInput
-    type="radio"
-    formControlName="minPlayers"
-    value=2
+<form
+    [formGroup]="form"
+    (ngSubmit)="changeActiveFilters()"
+    class="filters__form"
   >
-  <label
-  >
-    2
-  </label>
-  <input
-    matInput
-    type="radio"
-    formControlName="minPlayers"
-    value=4
-  >
-  <label
-  >
-    4
-  </label>
-  <h3>Maximum players</h3>
-  <input
-    matInput
-    type="radio"
-    formControlName="maxPlayers"
-    value=4
-  >
-  <label
-  >
-    4
-  </label>
-  <input
-    matInput
-    type="radio"
-    formControlName="maxPlayers"
-    value=6
-  >
-  <label
-  >
-    6
-  </label>
-  <input
-    matInput
-    type="text"
-    formControlName="name"
-    value=""
-  >
+  <div class="inputs">
+    <h4>Minimum players</h4>
+    <mat-radio-group
+      formControlName="minPlayers"
+    >
+      <mat-radio-button
+        class="radio__input"
+        matInput
+        value=2
+      >
+        2
+      </mat-radio-button>
+      <mat-radio-button
+        class="radio__input"
+        matInput
+        value=4
+      >
+        4
+      </mat-radio-button>
+    </mat-radio-group>
+
+    <h4>Maximum players</h4>
+    <mat-radio-group
+      formControlName="maxPlayers"
+    >
+      <mat-radio-button
+        class="radio__input"
+        matInput
+        type="radio"
+        value=4
+      >
+        4
+      </mat-radio-button>
+      <mat-radio-button
+        class="radio__input"
+        matInput
+        type="radio"
+        value=6
+      >
+        6
+      </mat-radio-button>
+    </mat-radio-group>
+    <input
+      class="name__input"
+      matInput
+      type="text"
+      formControlName="name"
+      placeholder="Jakiej gry szukasz?"
+      value=""
+    >
+  </div>
   <button
+    class="send"
     mat-raised-button
     type="submit"
   >
-  Search
+  Szukaj
   </button>
   <button
-    mat-flat-button
+    class="reset"
+    mat-raised-button
     (click)="setFiltersToDefault()"
     *ngIf="isDefault == false"
   >
     Usuń filtry
   </button>
 </form>
-</nav>

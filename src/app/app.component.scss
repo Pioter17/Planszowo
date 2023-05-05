@@ -1,29 +1,32 @@
 header {
   text-align: center;
-  background-color: black;
-  color: yellow;
+  background-color: deepskyblue;
+  color: navy;
   margin-top: 0;
   padding-top: 0;
   height: 100px;
   width: 100%;
   line-height: 100px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: large;
 }
 
 nav {
   margin-bottom: 40px;
   text-align: center;
-  border-bottom: 2px solid black;
+  border-bottom: 4px solid rgb(5, 5, 93);
 }
 
 nav a {
   font-size: 30px;
   padding: 35px;
-  border-left: 2px solid rgb(99, 99, 228);
+  color: navy;
+  border-left: 3px solid rgb(5, 5, 93);
   border-radius: 0;
 }
 
 nav a.__right_edge {
-  border-right: 2px solid rgb(99, 99, 228);
+  border-right: 3px solid rgb(5, 5, 93);
 }
 
 nav a:hover {
@@ -31,6 +34,6 @@ nav a:hover {
 }
 
 nav a.active {
-  background-color: white;
+  background-color: azure;
   text-decoration-line: none;
 }

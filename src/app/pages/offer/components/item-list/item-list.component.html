@@ -3,6 +3,7 @@
     class="wrapper"
   >
     <h3
+      class="data__info"
       *ngIf="gamesList == null || (displayedItems.length == 0 && gamesList != null)"
     >
       <ng-container
@@ -13,11 +14,12 @@
         <mat-icon>
           autorenew
         </mat-icon>
-        Chwileczkę...
+        Ładowanie...
       </ng-container>
       <ng-container
         *ngIf="displayedItems.length == 0 && gamesList != null"
       >
+      <br>
         Nie odnaleziono elementów dla zadanych filtrów wyszukiwania
       </ng-container>
     </h3>
