@@ -31,7 +31,7 @@ export class ItemListComponent implements OnChanges {
           medium : res.images.medium,
           small : res.images.small
         },
-        details : res.details,
+        details : res.description,
         price : res.price
       }))
     }

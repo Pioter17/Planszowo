@@ -10,6 +10,6 @@ export type GameItem = {
     medium:string,
     small:string,
   },
-  details: string,
+  description: string,
   price: number
 }

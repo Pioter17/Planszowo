@@ -28,8 +28,8 @@ export class ItemComponent {
 
   showDetails(){
    const dialogRef = this.dialog.open(ItemDetailsComponent, {
-    width: '700px',
-    height: '450px',
+    width: '900px',
+    height: '600px',
     data: this.pwProduct
    });
 

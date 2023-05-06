@@ -4,21 +4,19 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { AddToBasketComponent } from '../add-to-basket/add-to-basket.component';
-import { ItemDetailsComponent } from '../item-details/item-details.component';
-
+import { AddToBasketComponent } from '@pages/offer/components/add-to-basket/add-to-basket.component';
+import { ItemDetailsComponent } from '@pages/offer/components/item-details/item-details.component';
 
 @NgModule({
   declarations: [
     ItemDetailsComponent,
-    AddToBasketComponent,
-
+    AddToBasketComponent
   ],
   imports: [
     CommonModule,
-    MatIconModule,
     MatDialogModule,
     MatButtonModule,
+    MatIconModule
   ],
 })
 export class ItemModule { }

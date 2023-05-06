@@ -36,7 +36,7 @@ export class OfferComponent implements OnInit{
           medium: item.images.medium,
           small: item.images.small
         },
-        details: item.details,
+        description: item.description,
         price: item.price
       }));
       return {count : res.count, games};
