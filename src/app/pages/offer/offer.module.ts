@@ -15,6 +15,7 @@ import { ApiManagerService } from '@pages/offer/api-management.service';
 import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio'
+import { ItemDetailsComponent } from './components/item-details/item-details.component';
 
 
 
@@ -24,7 +25,8 @@ import { MatRadioModule } from '@angular/material/radio'
     ItemComponent,
     ItemListComponent,
     CardComponent,
-    FiltersFormComponent
+    FiltersFormComponent,
+    ItemDetailsComponent
   ],
   imports: [
     OfferRoutingModule,
