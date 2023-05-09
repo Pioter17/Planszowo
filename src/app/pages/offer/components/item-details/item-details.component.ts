@@ -1,6 +1,7 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Product } from '../../../../product.interface';
+import { BasketService } from '@pages/basket.service';
 
 @Component({
   selector: 'item-details',
@@ -14,7 +15,8 @@ export class ItemDetailsComponent implements OnInit {
 
   constructor(
     public dialogRef : MatDialogRef<ItemDetailsComponent>,
-    @Inject(MAT_DIALOG_DATA) public product : Product
+    @Inject(MAT_DIALOG_DATA) public product : Product,
+    private basket : BasketService
   ){}
 
   ngOnInit(): void {
@@ -22,6 +24,6 @@ export class ItemDetailsComponent implements OnInit {
   }
 
   addToBasket(){
-
+    this.basket.addToBasket(this.product.name, this.product.price)
   }
 }

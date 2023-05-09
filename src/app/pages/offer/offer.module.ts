@@ -16,6 +16,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio'
 import { ItemDetailsComponent } from './components/item-details/item-details.component';
+import { BasketService } from '@pages/basket.service';
 
 
 

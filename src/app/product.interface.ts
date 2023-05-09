@@ -11,3 +11,8 @@ export interface Product{
 }
 
 export type ProductForm = Omit<Product, "number">
+
+export interface basketProduct extends Pick<Product, "name"|"price">{
+  amount: number,
+  cumulatedPrice: number
+}
