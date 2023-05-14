@@ -4,6 +4,8 @@ form {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   grid-gap: 10px;
+  color: #2C3639;
+  margin-bottom: 30px;
 }
 
 .inputs {
@@ -18,10 +20,9 @@ form {
   grid-column: 2;
   width: 40%;
   margin-left: 20px;
-  background-color: azure;
-  color: navy;
-  font-family: 'Comic Sans MS', sans-serif;
-  font-size: 18px;
+  background-color: #F3E0B5;
+  font-size: 1.2rem;
+  border-radius: 10px;
 }
 
 .reset {
@@ -31,9 +32,13 @@ form {
 }
 
 .send {
-    grid-row: 2;
-    bottom: 25px;
-    margin-top: 5px;
+  grid-row: 2;
+  bottom: 25px;
+  margin-top: 5px;
+}
+
+.radio__input:checked {
+  background-color: #483838;
 }
 
 .name__input {
@@ -41,22 +46,15 @@ form {
   height: 30x;
   margin: 5px;
   padding: 5px;
-  font-family: 'Comic Sans MS', sans-serif;
-  color: navy;
-  font-size: 16px;
   display: block;
-  border: 2px solid navy;
+  font-size: 1rem;
+  border: 2px solid #483838;
   border-radius: 10px;
-  background-color: lightcyan;
+  background-color: #D6CDA4;
 }
 
 input[type="text"]:focus {
-  border: 2px solid navy;
   outline: none;
-  background-color: azure;
-}
-
-h4 {
-  color: navy;
+  background-color: #F3E0B5;
 }
 

@@ -1,10 +1,12 @@
-<header>
+<!-- <header>
   <h1>
     Welcome to {{ title }}
   </h1>
-</header>
-<nav>
+</header> -->
+<nav mat-tab-nav-bar>
+
   <a
+    mat-tab-link
     routerLink="/home"
     routerLinkActive="active"
     mat-button
@@ -12,6 +14,7 @@
   O nas
   </a>
   <a
+    mat-tab-link
     routerLink="/offer"
     routerLinkActive="active"
     mat-button
@@ -19,6 +22,7 @@
   Oferta
   </a>
   <a
+    mat-tab-link
     routerLink="/contact"
     routerLinkActive="active"
     mat-button
@@ -26,6 +30,7 @@
   Kontakt
   </a>
   <a
+    mat-tab-link
     routerLink="/basket"
     routerLinkActive="active"
     mat-button

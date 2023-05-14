@@ -1,40 +1,49 @@
 .item {
-  width: 400px;
-  height: 300px;
+  width: 25rem;
+  height: 20rem;
   position: relative;
-  background-color: azure;
-  color: navy;
+  background-color: #F3E0B5;
+  color: #2C3639;
+  padding: 1.5rem;
 }
 
 .price {
   position: absolute;
-  right: 20px;
-  bottom: 60px;
-  color: navy;
-  font-size: 25px;
+  right: 2rem;
+  bottom: 5rem;
+  color: #2C3639;
+  font-size: 1.5rem;
 }
 
 img {
-  margin-top: 10px;
-  max-width: 70%;
-  max-height: 70%;
+  margin-top: 1rem;
+  max-width: 60%;
+  max-height: 60%;
   width: auto;
   height: auto;
 }
 
 .details {
-  background-color: lightcyan;
+  background-color: #EDE4E0;
   position: absolute;
-  left: 10px;
-  bottom: 10px;
-  font-size: 15px;
-  border-color: navy;
+  left: 1.5rem;
+  bottom: 1.5rem;
+  height: 3rem;
+  width: 9rem;
+  border-color: #2C3639;
+  font-size: 1.1rem;
 }
 
 .add {
-  background-color: royalblue;
+  background-color: #3D8361;
   position: absolute;
-  right: 10px;
-  bottom: 10px;
-  font-size: 15px;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  height: 3rem;
+  width: 11rem;
+  font-size: 1rem;
+}
+
+.add > mat-icon {
+  width: 1rem;
 }

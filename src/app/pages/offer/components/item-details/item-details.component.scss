@@ -1,5 +1,6 @@
 .container {
-  padding: 30px;
+  padding: 2rem;
+  background-color: #EDE4E0;
 }
 
 .button__container {
@@ -9,12 +10,16 @@
 }
 
 h1, h2, h3 {
-  color: navy;
-  margin: 10px 10px 10px 0px;
+  color: #2C3639;
+  margin: 0.7rem 0.7rem 0.7rem 0;
 }
 
 h1::first-letter {
   text-transform: capitalize;
+}
+
+h2 {
+  font-size: 2rem;
 }
 
 img {
@@ -25,6 +30,8 @@ img {
 }
 
 .add {
-  background-color: royalblue;
-  font-size: 25px;
+  background-color: #3D8361;
+  font-size: 1.5rem;
+  height: 4rem;
+  width: 15rem;
 }

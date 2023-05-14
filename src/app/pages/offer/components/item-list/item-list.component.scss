@@ -3,6 +3,7 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
+  margin-bottom: 40px;
 }
 
 
@@ -14,12 +15,7 @@
 }
 
 .data__info {
-  color: navy;
-  font-size: 30px;
-  font-family: 'Comic Sans MS', sans-serif;
+  color: #2C3639;
+  font-size: 1.9rem;
   word-spacing: -3px;
 }
-
-// .wrapper:last-child {
-//   margin-right: auto;
-// }

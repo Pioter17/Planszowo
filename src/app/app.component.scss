@@ -7,33 +7,33 @@ header {
   height: 100px;
   width: 100%;
   line-height: 100px;
-  font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: large;
 }
 
 nav {
-  margin-bottom: 40px;
   text-align: center;
-  border-bottom: 4px solid rgb(5, 5, 93);
+  border-radius: 30px;
+  background-color: #3D8361;
+  width: 60%;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 nav a {
-  font-size: 30px;
-  padding: 35px;
-  color: navy;
-  border-left: 3px solid rgb(5, 5, 93);
-  border-radius: 0;
-}
-
-nav a.__right_edge {
-  border-right: 3px solid rgb(5, 5, 93);
-}
-
-nav a:hover {
   text-decoration-line: none;
+  border-radius: 30px;
+  width: 100%;
+  font-size: 2.5rem;
+  padding: 55px 35px 55px 35px;
+  color: #2C3639;
 }
+
 
 nav a.active {
-  background-color: azure;
+  background-color: #90B77D;
   text-decoration-line: none;
 }

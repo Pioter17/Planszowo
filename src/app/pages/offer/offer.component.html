@@ -3,53 +3,6 @@
     (activeFiltersEmitter)="changeFilters($event)"
   >
   </filters-form>
-  <nav class="navigate">
-    <!-- <h3>Minimum players</h3>
-    <input
-      type="checkbox"
-      (click)="changeFilters('minPlayers',2)"
-    >
-    <label
-    >
-      2
-    </label>
-    <input
-      type="checkbox"
-      (click)="changeFilters('minPlayers',4)"
-    >
-    <label
-    >
-      4
-    </label>
-    <h3>Maximum players</h3>
-    <input
-      type="checkbox"
-      (click)="changeFilters('maxPlayers',4)"
-    >
-    <label
-    >
-      4
-    </label>
-    <input
-      type="checkbox"
-      (click)="changeFilters('maxPlayers',6)"
-    >
-    <label
-    >
-      6
-    </label>
-    <input type="text"
-      #myInput
-      value=""
-      (change)="changeFilters('name', myInput.value)">
-
-    <label
-    >
-      Name
-    </label> -->
-
-
-  </nav>
   <item-list
     [gamesList]="gameList$ | async"
   ></item-list>

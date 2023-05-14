@@ -2,7 +2,8 @@
 
 <ul>
   <li *ngFor="let product of activeBasket">
-    {{ product.name }}
+    {{ product.name + " ilość " + product.amount + " cena " + product.price }}
+    <input type="number" [value]="product.amount" min="1">
   </li>
 
 </ul>

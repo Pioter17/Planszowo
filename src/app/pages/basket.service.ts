@@ -25,15 +25,12 @@ export class BasketService {
       };
       this.basket.push(item);
     }
-
-    console.log(this.basket)
   }
   // public getFromBasket() : Product{
   //   return
   // }
 
   public getBasket(){
-    console.log(this.basket,"hhhh")
     return this.basket;
   }
 

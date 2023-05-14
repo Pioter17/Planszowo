@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddToBasketComponent } from '../add-to-basket/add-to-basket.component';
 import { filter, takeUntil, Subject } from 'rxjs';
 import { ItemDetailsComponent } from '../item-details/item-details.component';
+import { BasketService } from '@pages/basket.service';
 
 @Component({
   selector: 'pw-item',
@@ -18,7 +19,8 @@ export class ItemComponent {
   OnDestroy$ = new Subject<void>();
 
   constructor(
-    public dialog : MatDialog
+    public dialog : MatDialog,
+    private basket : BasketService
   ){ }
 
   ngOnDestroy(): void {
@@ -40,6 +42,6 @@ export class ItemComponent {
   }
 
   addToBasket(){
-
+    this.basket.addToBasket(this.pwProduct.name, this.pwProduct.price)
   }
 }
