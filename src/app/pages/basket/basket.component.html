@@ -1,9 +1,6 @@
-<p style="text-align: center;">basket works!</p>
-
-<ul>
-  <li *ngFor="let product of activeBasket">
-    {{ product.name + " ilość " + product.amount + " cena " + product.price }}
-    <input type="number" [value]="product.amount" min="1">
-  </li>
-
-</ul>
+<div class="contents">
+  <basket-item *ngFor="let product of activeBasket"
+    [item]="product"
+  >
+  </basket-item>
+</div>
