@@ -17,6 +17,13 @@ export class BasketComponent implements OnInit{
 
   ngOnInit(): void {
     this.activeBasket = this.basket.getBasket();
+    console.log(this.activeBasket)
+  }
+
+
+  deleteBasketItem(nameToDelete : string){
+    this.basket.deleteFromBasket(nameToDelete);
+    this.activeBasket = this.activeBasket.filter(({name})=> name != nameToDelete)
   }
 
 }

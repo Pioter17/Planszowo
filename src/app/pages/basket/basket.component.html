@@ -1,6 +1,8 @@
 <div class="contents">
   <basket-item *ngFor="let product of activeBasket"
+    class="bitem"
     [item]="product"
+    [remove]="deleteBasketItem.bind(this, product.name)"
   >
   </basket-item>
 </div>

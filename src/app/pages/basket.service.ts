@@ -32,5 +32,6 @@ export class BasketService {
 
   public deleteFromBasket(nameToDelete: string) : void{
     this.basket = this.basket.filter(({name})=> name != nameToDelete)
+    console.log(this.basket);
   }
 }

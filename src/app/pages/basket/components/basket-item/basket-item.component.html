@@ -1,1 +1,22 @@
-{{ name + " cena: " + price}}
+<div class="item">
+  <h2
+    class="name"
+  >
+    {{ name }}
+  </h2>
+  <button
+  class="remove"
+  (click)="remove()"
+  mat-raised-button
+  >
+    <mat-icon>
+    delete
+    </mat-icon>
+  </button>
+  <h2
+    class="price"
+  >
+    {{ price }}
+  </h2>
+
+</div>
