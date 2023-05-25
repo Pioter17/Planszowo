@@ -9,7 +9,8 @@ import { basketProduct } from 'src/app/product.interface';
 })
 export class BasketComponent implements OnInit{
 
-  activeBasket : basketProduct[]
+  activeBasket : basketProduct[];
+  fullPrice : number;
 
   constructor(
     private basket: BasketService
@@ -17,13 +18,28 @@ export class BasketComponent implements OnInit{
 
   ngOnInit(): void {
     this.activeBasket = this.basket.getBasket();
-    console.log(this.activeBasket)
+    this.fullPrice = this.getFullPrice();
   }
 
 
-  deleteBasketItem(nameToDelete : string){
+  deleteBasketItem(nameToDelete : string): void{
     this.basket.deleteFromBasket(nameToDelete);
     this.activeBasket = this.activeBasket.filter(({name})=> name != nameToDelete)
+    this.fullPrice = this.getFullPrice();
+  }
+
+  deleteAllItems() : void {
+    this.basket.deleteAllFromBasket();
+    this.activeBasket = [];
+    this.fullPrice = this.getFullPrice();
+  }
+
+  getFullPrice() : number{
+    let sum : number = 0;
+    this.activeBasket.forEach((res)=>{
+      sum += parseFloat(res.price);
+    })
+    return +sum.toFixed(2);
   }
 
 }

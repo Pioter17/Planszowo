@@ -1,5 +1,52 @@
-.bitem {
+.basketItem {
   // padding: 10px;
   margin: 0;
   // border: 10px solid #2C3639;
+}
+
+.emptyBasketMessage {
+  text-align: center;
+  font-size: 30px;
+}
+
+.fullPriceBar, .actions {
+  height: 30px;
+  padding: 40px;
+  display: flex;
+  justify-content: center; /* Wyśrodkowanie w osi X */
+  align-items: center; /* Wyśrodkowanie w osi Y */
+}
+
+.fullPriceBar {
+  background-color: #B7B7B7;
+  border: 2px solid #2C3639;
+}
+
+.all {
+  flex: 1;
+  // text-align: center;
+}
+
+.deleteAll {
+  background-color: #F3E0B5;
+  font-size: 20px;
+}
+
+.fullPrice {
+  flex: 1;
+  text-align: center;
+}
+
+.nothing {
+  flex: 1;
+}
+
+.buttonContainer {
+  flex: 1;
+  text-align: center;
+}
+
+.sendOrder {
+  background-color: #3D8361;
+  font-size: 20px;
 }

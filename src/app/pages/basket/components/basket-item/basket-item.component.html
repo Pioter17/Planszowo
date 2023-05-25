@@ -4,15 +4,19 @@
   >
     {{ name }}
   </h2>
-  <button
-  class="remove"
-  (click)="remove()"
-  mat-raised-button
+  <div
+    class="buttonContainer"
   >
-    <mat-icon>
-    delete
-    </mat-icon>
-  </button>
+    <button
+    class="remove"
+    (click)="remove()"
+    mat-stroked-button
+    >
+      <mat-icon>
+      delete
+      </mat-icon>
+    </button>
+  </div>
   <h2
     class="price"
   >

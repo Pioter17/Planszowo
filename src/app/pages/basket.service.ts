@@ -10,7 +10,7 @@ export class BasketService {
 
   constructor() { }
 
-  public addToBasket(name : string, price: number) : void{
+  public addToBasket(name : string, price: string) : void{
     let item : basketProduct;
     if(this.basket.some((item) => item.name == name)){
 
@@ -32,6 +32,10 @@ export class BasketService {
 
   public deleteFromBasket(nameToDelete: string) : void{
     this.basket = this.basket.filter(({name})=> name != nameToDelete)
-    console.log(this.basket);
   }
+
+  deleteAllFromBasket() : void {
+    this.basket = [];
+  }
+
 }

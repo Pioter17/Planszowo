@@ -1,8 +1,56 @@
 <div class="contents">
+  <div
+    class="emptyBasketMessage"
+    *ngIf="activeBasket.length == 0"
+  >
+    Twój koszyk jest pusty
+  </div>
   <basket-item *ngFor="let product of activeBasket"
-    class="bitem"
+    class="basketItem"
     [item]="product"
     [remove]="deleteBasketItem.bind(this, product.name)"
   >
   </basket-item>
+  <div
+    class="fullPriceBar"
+    *ngIf="activeBasket.length != 0"
+  >
+    <h2
+      class="all"
+    >
+      Razem
+    </h2>
+    <div
+      class="buttonContainer"
+    >
+      <button
+        mat-stroked-button
+        class="deleteAll"
+        (click)="deleteAllItems()"
+      >
+        Usuń wszystkie
+      </button>
+    </div>
+    <h2
+      class="fullPrice"
+    >
+      {{ fullPrice }}
+    </h2>
+  </div>
+  <div
+    class="actions"
+    *ngIf="activeBasket.length != 0"
+  >
+    <div class="nothing"></div>
+    <div
+      class="buttonContainer"
+    >
+      <button
+        mat-raised-button
+        class="sendOrder"
+      >
+        Złóż zamówienie
+      </button>
+    </div>
+  </div>
 </div>

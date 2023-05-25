@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { BasketService } from '@pages/basket.service';
+import { Component, Input, OnInit } from '@angular/core';
 import { basketProduct } from 'src/app/product.interface';
 
 @Component({
@@ -13,10 +12,10 @@ export class BasketItemComponent implements OnInit {
   @Input() remove : Function;
 
   public name : string;
-  public price : number;
+  public price : string;
 
   constructor(
-    private basket: BasketService
+    // private basket: BasketService
   ) { }
 
   ngOnInit() {

@@ -7,7 +7,7 @@ export interface Product{
     small: string
   };
   details: string;
-  price: number;
+  price: string;
 }
 
 export type ProductForm = Omit<Product, "number">

@@ -11,5 +11,5 @@ export type GameItem = {
     small:string,
   },
   description: string,
-  price: number
+  price: string
 }
