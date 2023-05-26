@@ -1,10 +1,9 @@
-import { Component, Input, Output, OnDestroy, EventEmitter } from '@angular/core';
-import { Product, ProductForm } from '../../../../product.interface';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AddToBasketComponent } from '../add-to-basket/add-to-basket.component';
-import { filter, takeUntil, Subject } from 'rxjs';
-import { ItemDetailsComponent } from '../item-details/item-details.component';
 import { BasketService } from '@pages/basket.service';
+import { Subject, filter, takeUntil } from 'rxjs';
+import { Product } from '../../../../product.interface';
+import { ItemDetailsComponent } from '@pages/offer/components/item-details/item-details.component';
 
 @Component({
   selector: 'pw-item',
@@ -13,8 +12,7 @@ import { BasketService } from '@pages/basket.service';
 })
 export class ItemComponent {
   @Input() pwProduct : Product;
-  @Output() pwShowDetails = new EventEmitter<ProductForm>();
-  @Output() pwAddToBasket = new EventEmitter<ProductForm>();
+  @Output() pwShowDetails = new EventEmitter<Product>();
 
   OnDestroy$ = new Subject<void>();
 
