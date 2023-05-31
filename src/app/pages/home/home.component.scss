@@ -24,7 +24,17 @@ p {
   background-color: #EDE4E0;
   color: #2C3639;
   height: 800px;
+  width: 1200px;
 }
+
+mat-dialog-content {
+  max-height: 85vh
+}
+
+.content-container {
+  line-height: 24px;
+}
+
 
 h1 {
   text-align: center;
