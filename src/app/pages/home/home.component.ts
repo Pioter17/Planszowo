@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output, TemplateRef, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+
+  @ViewChild('dialogTemplate') dialogTemplate!: TemplateRef<unknown>;
+
+  constructor (
+    public dialog : MatDialog
+  ) {}
+
+  showRules() {
+    const dialogRef = this.dialog.open(this.dialogTemplate, {
+      height: '800px'
+    })
+  }
+
+  closeRules() {
+    this.dialog.closeAll();
+  }
 
 }

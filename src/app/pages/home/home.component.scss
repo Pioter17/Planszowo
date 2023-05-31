@@ -1,3 +1,44 @@
 p {
   margin: 1rem;
 }
+
+.button__container {
+  padding: 20px;
+  text-align: center;
+}
+
+.rules {
+  text-align: center;
+  font-size: 20px;
+  background-color: #F3E0B5;
+}
+
+.close__dialog {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}
+
+.rules__dialog {
+  padding: 20px;
+  background-color: #EDE4E0;
+  color: #2C3639;
+  height: 800px;
+}
+
+h1 {
+  text-align: center;
+  margin: 10px;
+}
+
+h2 {
+  margin: 10px;
+}
+
+ol {
+  margin: 20px;
+}
+
+li {
+  font-size: 20px;
+}

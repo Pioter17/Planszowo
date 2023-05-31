@@ -18,8 +18,6 @@ import { MatRadioModule } from '@angular/material/radio'
 import { ItemDetailsComponent } from './components/item-details/item-details.component';
 import { BasketService } from '@pages/basket.service';
 
-
-
 @NgModule({
   declarations: [
     OfferComponent,
