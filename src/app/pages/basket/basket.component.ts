@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { BasketService } from '@pages/basket.service';
 import { basketProduct } from 'src/app/product.interface';
+import { OrderFormDialogComponent } from './components/order-form-dialog/order-form-dialog.component';
 
 @Component({
   selector: 'app-basket',
@@ -11,14 +13,17 @@ export class BasketComponent implements OnInit{
 
   activeBasket : basketProduct[];
   fullPrice : number;
+  orderSent : boolean;
 
   constructor(
-    private basket: BasketService
+    private basket: BasketService,
+    private dialog: MatDialog
   ){ }
 
   ngOnInit(): void {
     this.activeBasket = this.basket.getBasket();
     this.fullPrice = this.getFullPrice();
+    this.orderSent = false;
   }
 
 
@@ -40,6 +45,21 @@ export class BasketComponent implements OnInit{
       sum += parseFloat(res.price);
     })
     return +sum.toFixed(2);
+  }
+
+  openOrderFormDialog(){
+    const dialogRef = this.dialog.open(OrderFormDialogComponent, {
+      width: '900px',
+      data: this.getFullPrice()
+    })
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.activeBasket = this.basket.getBasket();
+      this.fullPrice = this.getFullPrice();
+      if(this.activeBasket.length == 0) {
+        this.orderSent = true
+      }
+    });
   }
 
 }

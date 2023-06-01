@@ -1,8 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Filters } from '@pages/offer/filters';
-import { Observable, filter, firstValueFrom, map, merge, of } from 'rxjs';
-import { isEqual } from 'lodash';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'filters-form',

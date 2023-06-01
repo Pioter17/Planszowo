@@ -3,6 +3,12 @@
     class="emptyBasketMessage"
     *ngIf="activeBasket.length == 0"
   >
+    <p
+      class="order__sent"
+      *ngIf="orderSent == true"
+    >
+      Zamówienie zostało wysłane
+    </p>
     Twój koszyk jest pusty
   </div>
   <basket-item *ngFor="let product of activeBasket"
@@ -48,6 +54,7 @@
       <button
         mat-raised-button
         class="sendOrder"
+        (click)="openOrderFormDialog()"
       >
         Złóż zamówienie
       </button>
