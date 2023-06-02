@@ -26,7 +26,6 @@ export class BasketComponent implements OnInit{
     this.orderSent = false;
   }
 
-
   deleteBasketItem(nameToDelete : string): void{
     this.basket.deleteFromBasket(nameToDelete);
     this.activeBasket = this.activeBasket.filter(({name})=> name != nameToDelete)
@@ -61,5 +60,4 @@ export class BasketComponent implements OnInit{
       }
     });
   }
-
 }

@@ -69,7 +69,7 @@
         formControlName="code"
       >
       <mat-error>
-        Wymagane
+        Wymagany kod pocztowy w postaci cc-ccc, gdzie c oznacza cyfrę
       </mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill" class="column__1">
@@ -94,11 +94,14 @@
     </mat-form-field>
     <mat-form-field appearance="fill" class="column__2">
       <mat-label>Data ważności karty płatniczej</mat-label>
-      <input
-        matInput
-        type="text"
+      <select
+        matNativeControl
         formControlName="cardDate"
       >
+        <option *ngFor="let date of dateList" [value]="date">{{ date }}</option>
+      </select>
+      <datalist id="myDatalist">
+      </datalist>
       <mat-error>
         Wymagane
       </mat-error>

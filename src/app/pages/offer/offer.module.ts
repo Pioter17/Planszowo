@@ -1,22 +1,21 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ItemComponent } from '@pages/offer/components/item/item.component';
-import { ItemListComponent } from '@pages/offer/components/item-list/item-list.component';
+import { NgModule } from '@angular/core';
 import { CardComponent } from '@pages/offer/components/card/card.component';
 import { FiltersFormComponent } from '@pages/offer/components/filters-form/filters-form.component';
+import { ItemListComponent } from '@pages/offer/components/item-list/item-list.component';
+import { ItemComponent } from '@pages/offer/components/item/item.component';
 
-import { MatIconModule } from '@angular/material/icon';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatButtonModule } from '@angular/material/button';
-import { OfferRoutingModule } from '@pages/offer/offer-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { OfferComponent } from '@pages/offer/offer.component';
-import { ApiManagerService } from '@pages/offer/api-management.service';
-import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatRadioModule } from '@angular/material/radio'
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSliderModule } from '@angular/material/slider';
+import { ApiManagerService } from '@pages/offer/api-management.service';
+import { OfferRoutingModule } from '@pages/offer/offer-routing.module';
+import { OfferComponent } from '@pages/offer/offer.component';
 import { ItemDetailsComponent } from './components/item-details/item-details.component';
-import { BasketService } from '@pages/basket.service';
 
 @NgModule({
   declarations: [

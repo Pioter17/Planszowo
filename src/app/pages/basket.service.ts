@@ -22,10 +22,6 @@ export class BasketService {
       this.basket.push(item);
     }
   }
-  // public getFromBasket() : Product{
-  //   return
-  // }
-
   public getBasket(){
     return this.basket;
   }

@@ -15,7 +15,6 @@ export class BasketItemComponent implements OnInit {
   public price : string;
 
   constructor(
-    // private basket: BasketService
   ) { }
 
   ngOnInit() {

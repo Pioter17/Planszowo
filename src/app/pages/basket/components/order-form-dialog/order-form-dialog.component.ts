@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { BasketService } from '@pages/basket.service';
@@ -9,12 +9,10 @@ import { BasketService } from '@pages/basket.service';
   styleUrls: ['./order-form-dialog.component.scss']
 })
 
-
-
 export class OrderFormDialogComponent implements OnInit{
 
-
   form : FormGroup;
+  dateList : string[];
 
   constructor(
     private basket: BasketService,
@@ -30,12 +28,14 @@ export class OrderFormDialogComponent implements OnInit{
       email: ["", [Validators.required, Validators.email]],
       address: ["", Validators.required],
       town: ["", Validators.required],
-      code: ["", Validators.required], // * tu trzeba dodać
+      code: ["", [Validators.required, Validators.pattern('^[0-9]{2}-[0-9]{3}$')]],
       apartmentNumber: [""],
       cardNumber: ["", [Validators.required, Validators.min(0), this.cardNumberValidator()]],
-      cardDate: ["", Validators.required], // * tu trzeba dorobić
+      cardDate: ["", Validators.required],
       cvv: ["", [Validators.required, Validators.min(0), this.cvvValidator()]]
     })
+
+    this.dateList = this.generateDateList();
   }
 
   cardNumberValidator(): ValidatorFn {
@@ -69,5 +69,27 @@ export class OrderFormDialogComponent implements OnInit{
 
   onCancelClose() {
     this.dialogRef.close(null);
+  }
+
+  private generateDateList() : string[] {
+    let currentDate = new Date();
+    let endYear = currentDate.getFullYear() + 5;
+    let options = [];
+
+    while (currentDate.getFullYear() < endYear || (currentDate.getFullYear() === endYear && currentDate.getMonth() === 0)) {
+      let month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+      let year = currentDate.getFullYear().toString();
+      let optionText = month + '-' + year;
+      options.push(optionText);
+
+      // Przejście do kolejnego miesiąca
+      currentDate.setMonth(currentDate.getMonth() + 1);
+    }
+
+    return options;
+  }
+
+  handleInput(event: any) {
+    event.target.value = ''; // Resetuje wprowadzoną wartość
   }
 }

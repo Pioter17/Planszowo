@@ -10,13 +10,11 @@ import { Observable } from 'rxjs';
 })
 export class FiltersFormComponent implements OnInit {
 
-
   private defaultFilters : Filters = {
     minPlayers : 2,
     maxPlayers : 4,
     name : ""
   }
-
   public activeFilters : Filters = {
     minPlayers : 2,
     maxPlayers : 4,
@@ -40,6 +38,8 @@ export class FiltersFormComponent implements OnInit {
       name: [this.defaultFilters.name]
     })
 
+    this.changeActiveFilters();
+
     // this.isEdit$ = this.form.valueChanges.pipe(
     //   map(value => {
     //     return value.minPlayers !== this.defaultFilters.minPlayers ||
@@ -50,7 +50,6 @@ export class FiltersFormComponent implements OnInit {
   }
 
   private sendActiveFilters() : void{
-    console.log(this.activeFilters);
     this.activeFiltersEmitter.emit(this.activeFilters);
   }
 

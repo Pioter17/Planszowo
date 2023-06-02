@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, debounceTime, map, switchMap } from 'rxjs';
 import { ApiManagerService } from './api-management.service';
-import { Filters } from './filters';
-import { Observable, count, debounceTime, map, switchMap, tap } from 'rxjs';
-import { GameItem, GameList } from './types/game-list.type';
+import { Filters } from '@pages/offer/filters';
+import { GameList } from '@pages/offer/types/game-list.type';
 
 @Component({
   selector: 'app-offer',
@@ -17,7 +17,6 @@ export class OfferComponent implements OnInit{
     private router: Router,
     private apiManager: ApiManagerService
   ){ }
-
 
   gameFilters$ : Observable<Filters>
 
@@ -41,17 +40,12 @@ export class OfferComponent implements OnInit{
       }));
       return {count : res.count, games};
       }),
-      tap((res) => console.log(res))
     )
   }
 
   onSelected(filter : {id : string, name : string}){
     this.router.navigate([filter.id], {relativeTo: this.route});
   }
-
-  // changeFilters(filter : keyof Filters, value : boolean | number | string) : void{
-  //   this.apiManager.setGameFilters(filter, value);
-  // }
 
   changeFilters(filters : Filters){
     this.apiManager.setGameFilters(filters);

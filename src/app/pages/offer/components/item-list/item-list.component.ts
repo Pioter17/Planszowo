@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { GameList } from '@pages/offer/types/game-list.type';
 import { Product } from 'src/app/product.interface';
 

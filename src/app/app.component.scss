@@ -1,13 +1,25 @@
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   text-align: center;
-  background-color: deepskyblue;
-  color: navy;
+  background-color: #C38154;
+  color: #2C3639;
+  margin: auto;
   margin-top: 0;
   padding-top: 0;
   height: 100px;
-  width: 100%;
+  width: 60%;
   line-height: 100px;
-  font-size: large;
+  font-size: 30px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-width: 0 3px 3px 3px;
+  border-style: solid;
+  border-color: #483838;
 }
 
 nav {
@@ -16,7 +28,7 @@ nav {
   background-color: #3D8361;
   width: 60%;
   margin: auto;
-  margin-top: 60px;
+  margin-top: 140px;
   margin-bottom: 40px;
   display: grid;
   padding: 1rem;
