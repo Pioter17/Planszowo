@@ -1,3 +1,5 @@
+@import 'src/breakpoints';
+
 header {
   position: fixed;
   top: 0;
@@ -11,7 +13,7 @@ header {
   margin-top: 0;
   padding-top: 0;
   height: 100px;
-  width: 60%;
+  width: 72%;
   line-height: 100px;
   font-size: 30px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -26,12 +28,13 @@ nav {
   text-align: center;
   border-radius: 30px;
   background-color: #3D8361;
-  width: 60%;
+  width: 70%;
   margin: auto;
   margin-top: 140px;
   margin-bottom: 40px;
   display: grid;
-  padding: 1rem;
+  padding: 10px;
+  font-size: 40px;
   grid-template-columns: repeat(4, 1fr);
 }
 
@@ -39,8 +42,7 @@ nav a {
   text-decoration-line: none;
   border-radius: 30px;
   width: 100%;
-  font-size: 2.5rem;
-  padding: 55px 35px 55px 35px;
+  padding: 50px 25px 50px 25px;
   color: #2C3639;
 }
 
@@ -48,4 +50,42 @@ nav a {
 nav a.active {
   background-color: #90B77D;
   text-decoration-line: none;
+}
+
+@media screen and (min-width:$screen-md-min) and (max-width:$screen-lg-min) {
+  header {
+    width: 80%;
+    font-size: 25px;
+  }
+
+  nav {
+    width: 80%;
+    font-size: 30px;
+    padding: 5px;
+    margin-top: 120px;
+    margin-bottom: 20px;
+
+    & a {
+      padding: 35px 25px 35px 25px;
+    }
+  }
+}
+
+@media screen and (max-width:$screen-md-min) {
+  header {
+    width: 100%;
+    font-size: 20px;
+  }
+
+  nav {
+    width: 100%;
+    font-size: 22px;
+    padding: 3px;
+    margin-top: 110px;
+    margin-bottom: 10px;
+
+    & a {
+      padding: 25px 12px 25px 12px;
+    }
+  }
 }

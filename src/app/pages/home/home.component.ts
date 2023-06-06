@@ -16,7 +16,9 @@ export class HomeComponent {
 
   showRules() {
     const dialogRef = this.dialog.open(this.dialogTemplate, {
-      height: '800px'
+      panelClass: 'full-screen-modal',
+      maxWidth: '100vw',
+      maxHeight: '100vh'
     })
   }
 
