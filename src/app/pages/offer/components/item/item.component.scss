@@ -1,24 +1,26 @@
+@import 'src/breakpoints';
+
 .item {
-  width: 25rem;
-  height: 20rem;
+  width: 400px;
+  height: 320px;
   position: relative;
   background-color: #F3E0B5;
   color: #2C3639;
-  padding: 1.5rem;
+  padding: 12px;
 }
 
 .price {
   position: absolute;
-  right: 2rem;
-  bottom: 5rem;
+  right: 32px;
+  bottom: 80px;
   color: #2C3639;
-  font-size: 1.5rem;
+  font-size: 24px;
 }
 
 img {
-  margin-top: 1rem;
+  margin-top: 12px;
   max-width: 60%;
-  max-height: 60%;
+  max-height: 50%;
   width: auto;
   height: auto;
 }
@@ -26,24 +28,110 @@ img {
 .details {
   background-color: #EDE4E0;
   position: absolute;
-  left: 1.5rem;
-  bottom: 1.5rem;
-  height: 3rem;
-  width: 9rem;
+  left: 12px;
+  bottom: 24px;
+  height: 48px;
+  width: 144px;
   border-color: #2C3639;
-  font-size: 1.1rem;
+  font-size: 18px;
 }
 
 .add {
   background-color: #3D8361;
   position: absolute;
-  right: 1.5rem;
-  bottom: 1.5rem;
-  height: 3rem;
-  width: 11rem;
-  font-size: 1rem;
+  right: 12px;
+  bottom: 24px;
+  height: 48px;
+  width: 180px;
+  font-size: 16px;
 }
 
 .add > mat-icon {
-  width: 1rem;
+  width: 16px;
+}
+
+@media screen and (min-width:$screen-md-min) and (max-width:$screen-lg-min) {
+  .item {
+    width: 300px;
+    height: 240px;
+    padding: 10px;
+  }
+
+  img {
+    margin-top: 10px;
+    max-width: 60%;
+    max-height: 50%;
+  }
+
+  .price {
+    right: 24px;
+    bottom: 60px;
+    font-size: 18px;
+  }
+
+  .details {
+    left: 10px;
+    bottom: 14px;
+    height: 36px;
+    width: 120px;
+    font-size: 14px;
+  }
+
+  .add {
+    right: 10px;
+    bottom: 14px;
+    height: 36px;
+    width: 135px;
+    font-size: 14px;
+  }
+
+  .add > mat-icon {
+    width: 20px;
+  }
+}
+
+@media screen and (max-width:$screen-md-min) {
+  .item {
+    width: 300px;
+    height: 240px;
+    padding: 8px;
+  }
+
+  img {
+    margin-top: 10px;
+    max-width: 60%;
+    max-height: 50%;
+  }
+
+  .price {
+    right: 24px;
+    bottom: 60px;
+    font-size: 18px;
+  }
+
+  .details {
+    left: 8px;
+    bottom: 14px;
+    height: 36px;
+    width: 120px;
+    font-size: 14px;
+  }
+
+  .add {
+    right: 8px;
+    bottom: 14px;
+    height: 36px;
+    width: 135px;
+    font-size: 14px;
+  }
+
+  .add > mat-icon {
+    width: 20px;
+  }
+
+  .details__dialog {
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+  }
 }

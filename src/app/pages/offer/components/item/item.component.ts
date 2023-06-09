@@ -28,9 +28,9 @@ export class ItemComponent {
 
   showDetails(){
    const dialogRef = this.dialog.open(ItemDetailsComponent, {
-    width: '900px',
-    height: '600px',
-    data: this.pwProduct
+    data: this.pwProduct,
+    maxHeight: '90vh',
+    maxWidth: '98vw'
    });
 
    dialogRef.afterClosed().pipe(

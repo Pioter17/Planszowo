@@ -1,7 +1,10 @@
+@import 'src/breakpoints';
+
 .container {
   padding: 20px;
   background-color: #B7B7B7;
   color: #2C3639;
+  width: 80vw;
 }
 
 h1 {
@@ -60,5 +63,62 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 input[type="number"] {
+  appearance: textfield;
   -moz-appearance: textfield;
+}
+
+@media screen and (min-width:$screen-md-min) and (max-width:$screen-lg-min) {
+  .order__form {
+    margin-top: 20px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: var(--gap);
+  }
+
+  .column__1, .column__2 {
+    grid-column: 1;
+  }
+
+  .buttons__container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .cancel, h3, .send__order {
+    grid-column: 1;
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width:$screen-md-min) {
+  .container {
+    width: 100%;
+  }
+
+  .order__form {
+    margin-top: 20px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: var(--gap);
+  }
+
+  mat-form-field {
+    max-width: 300px;
+  }
+
+  .column__1, .column__2 {
+    grid-column: 1;
+  }
+
+  .buttons__container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .cancel, h3, .send__order {
+    grid-column: 1;
+    margin: 5px;
+  }
 }

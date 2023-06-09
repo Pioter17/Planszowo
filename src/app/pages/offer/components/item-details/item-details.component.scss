@@ -1,25 +1,29 @@
+@import 'src/breakpoints';
+
 .container {
-  padding: 2rem;
+  padding: 30px;
   background-color: #EDE4E0;
+  color: #2C3639;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .button__container {
   display: flex;
   justify-content: space-between;
-  margin: 10px;
+  margin-top: 30px;
 }
 
-h1, h2, h3 {
-  color: #2C3639;
-  margin: 0.7rem 0.7rem 0.7rem 0;
+h1 {
+  margin-bottom: 20px;
 }
 
 h1::first-letter {
   text-transform: capitalize;
 }
 
-h2 {
-  font-size: 2rem;
+h3 {
+  margin: 10px 10px 10px 0;
 }
 
 img {
@@ -31,7 +35,40 @@ img {
 
 .add {
   background-color: #3D8361;
-  font-size: 1.5rem;
-  height: 4rem;
-  width: 15rem;
+  font-size: 24px;
+  height: 64px;
+  width: 240px;
+}
+
+@media screen and (min-width:$screen-md-min) and (max-width:$screen-lg-min) {
+  .add {
+    font-size: 18px;
+    height: 48px;
+    width: 180px;
+  }
+
+  .container {
+    max-width: 750px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:$screen-md-min) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  .button__container {
+    margin-top: 15px;
+  }
+
+  .add {
+    font-size: 14px;
+    height: 36px;
+    width: 150px;
+  }
 }

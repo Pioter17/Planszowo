@@ -1,10 +1,9 @@
 <form
     [formGroup]="form"
     (ngSubmit)="changeActiveFilters()"
-    class="filters__form"
   >
   <div class="inputs">
-    <h4>Minimum players</h4>
+    <h3>Minimum players</h3>
     <mat-radio-group
       formControlName="minPlayers"
     >
@@ -24,7 +23,7 @@
       </mat-radio-button>
     </mat-radio-group>
 
-    <h4>Maximum players</h4>
+    <h3>Maximum players</h3>
     <mat-radio-group
       formControlName="maxPlayers"
     >

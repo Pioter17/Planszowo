@@ -1,12 +1,7 @@
-.basketItem {
-  // padding: 10px;
-  margin: 0;
-  // border: 10px solid #2C3639;
-}
+@import 'src/breakpoints';
 
 .emptyBasketMessage {
   text-align: center;
-  // font-size: 30px;
 }
 
 .order__sent {
@@ -15,7 +10,7 @@
 
 .fullPriceBar, .actions {
   height: 30px;
-  padding: 40px;
+  padding: 30px;
   display: flex;
   justify-content: center; /* Wyśrodkowanie w osi X */
   align-items: center; /* Wyśrodkowanie w osi Y */
@@ -26,14 +21,16 @@
   border: 2px solid #2C3639;
 }
 
+.fullPriceBar:hover {
+  background-color: #EDE4E0;
+}
+
 .all {
   flex: 1;
-  // text-align: center;
 }
 
 .deleteAll {
   background-color: #F3E0B5;
-  // font-size: 20px;
 }
 
 .fullPrice {
@@ -52,5 +49,52 @@
 
 .sendOrder {
   background-color: #3D8361;
-  // font-size: 20px;
+  font-size: 20px;
+  padding: auto;
+}
+
+@media screen and (min-width:$screen-md-min) and (max-width:$screen-lg-min) {
+  .contents {
+    padding-top: 25px;
+  }
+
+  .fullPriceBar {
+    padding: 30px 25px;
+    width: 90%;
+    margin: auto;
+  }
+
+  .all, .fullPrice {
+    font-size: 26px;
+  }
+
+  .sendOrder {
+    font-size: 18px;
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width:$screen-md-min) {
+  .contents {
+    padding-top: 20px;
+  }
+
+  .fullPriceBar {
+    padding: 25px 15px;
+    width: 90%;
+    margin: auto;
+  }
+
+  .all, .fullPrice {
+    font-size: 20px;
+  }
+
+  .deleteAll {
+    min-width: 60px;
+  }
+
+  .sendOrder {
+    font-size: 16px;
+    padding: 5px;
+  }
 }

@@ -48,7 +48,8 @@ export class BasketComponent implements OnInit{
 
   openOrderFormDialog(){
     const dialogRef = this.dialog.open(OrderFormDialogComponent, {
-      width: '900px',
+      maxHeight: '90vh',
+      maxWidth: '98vw',
       data: this.getFullPrice()
     })
 

@@ -1,10 +1,12 @@
+@import 'src/breakpoints';
+
 .item {
   width: 100%;
-  min-height: 30px;
+  height: 30px;
   display: flex;
   justify-content: center; /* Wyśrodkowanie w osi X */
   align-items: center; /* Wyśrodkowanie w osi Y */
-  padding: 40px;
+  padding: 30px;
   color: #2C3639;
   border: 2px solid #2C3639;
   border-width: 2px 2px 0px 2px;
@@ -14,7 +16,6 @@
 .item:hover {
   background-color: #EDE4E0;
 }
-
 
 .name {
   flex: 1;
@@ -32,5 +33,28 @@
 
 .remove {
   background-color: #F3E0B5;
-  // max-width: 40px;
+}
+
+@media screen and (min-width:$screen-md-min) and (max-width:$screen-lg-min) {
+  .item {
+    padding: 30px 25px;
+    width: 90%;
+    margin: auto;
+  }
+
+  .name, .price {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width:$screen-md-min) {
+  .item {
+    padding: 25px 10px;
+    width: 90%;
+    margin: auto;
+  }
+
+  .name, .price {
+    font-size: 22px;
+  }
 }
