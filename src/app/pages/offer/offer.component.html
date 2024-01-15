@@ -3,7 +3,8 @@
     (activeFiltersEmitter)="changeFilters($event)"
   >
   </filters-form>
-  <item-list
-    [gamesList]="gameList$ | async"
-  ></item-list>
+  <!-- <item-list
+    [gamesList]="gameList$ | async"         <---- Tak wyglądało, kiedy api działało
+  ></item-list> -->
+  <item-list [gamesList]="gameList"></item-list>
 </div>

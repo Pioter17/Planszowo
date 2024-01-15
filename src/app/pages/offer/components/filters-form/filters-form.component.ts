@@ -39,14 +39,6 @@ export class FiltersFormComponent implements OnInit {
     })
 
     this.changeActiveFilters();
-
-    // this.isEdit$ = this.form.valueChanges.pipe(
-    //   map(value => {
-    //     return value.minPlayers !== this.defaultFilters.minPlayers ||
-    //            value.maxPlayers !== this.defaultFilters.maxPlayers ||
-    //            value.name !== this.defaultFilters.name;
-    //   })
-    // )
   }
 
   private sendActiveFilters() : void{

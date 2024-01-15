@@ -2,28 +2,28 @@
   [pwTitle]="pwProduct.name"
   class="item"
 >
-<img [src]="pwProduct.images.small">
-<button
-  class="details"
-  (click)="showDetails()"
-  mat-stroked-button
->
-<mat-icon>
-  info
-</mat-icon>
-Szczegóły
-</button>
-<h4 class="price">
-  ${{ pwProduct.price }}
-</h4>
-<button
-  class="add"
-  (click)="addToBasket()"
-  mat-raised-button
->
-<mat-icon>
-  add_shopping_cart
-</mat-icon>
-Dodaj do koszyka
-</button>
+  <img [src]="pwProduct.images.small">
+  <button
+    class="details"
+    (click)="showDetails()"
+    mat-stroked-button
+  >
+    <mat-icon>
+      info
+    </mat-icon>
+    Szczegóły
+  </button>
+  <h4 class="price">
+    ${{ pwProduct.price }}
+  </h4>
+  <button
+    class="add"
+    (click)="addToBasket()"
+    mat-raised-button
+  >
+    <mat-icon>
+      add_shopping_cart
+    </mat-icon>
+    Dodaj do koszyka
+  </button>
 </app-card>
