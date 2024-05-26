@@ -4,6 +4,17 @@ Board games online store app. It is project for studies and my first project mad
 
 Hosted page: https://planszowo-lpsylwr0s-pioter17.vercel.app
 
+## Technologies
+
+- Angular,
+- Typescript,
+- Material,
+- HTML,
+- SCSS.
+<br>
+
+## Details
+
 <details>
   <summary>Click to see short summary & images</summary>
   
