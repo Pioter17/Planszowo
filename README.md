@@ -2,7 +2,7 @@
 
 Board games online store app. It is project for studies and my first project made using Angular. I had connection to external API to display real boardgames, but unfortunately it was closed. That's why all games shown in the offer page are just placeholders now. For UI I used Angular Material components and my own styles as well. 
 
-Hosted page: https://planszowo-lpsylwr0s-pioter17.vercel.app
+Hosted page: https://planszowo.vercel.app/home
 
 ## Technologies
 
